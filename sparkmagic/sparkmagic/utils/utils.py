@@ -50,6 +50,8 @@ def coerce_pandas_df_to_numeric_datetime(df):
 
 
 def records_to_dataframe(records_text, kind, coerce=None):
+    if records_text[-1:] == '\n':
+        records_text = records_text[:-1]
     if records_text in ['', '[]']:
         strings = []
     else:
